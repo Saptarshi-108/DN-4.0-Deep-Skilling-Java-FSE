@@ -6,11 +6,10 @@ public class Main {
 
         FinancialTool ft = new FinancialTool();
 
-        ft.financialForecast(15000.00, 0.055, 10);
-        ft.financialForecast(85000.50, 0.045, 7);
-        ft.financialForecast(37500.75, 0.062, 5);
-        ft.financialForecast(60000.00, 0.038, 15);
-
+        ft.financialForecast(20000.00, 0.055, 10);
+        ft.financialForecast(90000.50, 0.045, 7);
+        ft.financialForecast(49500.75, 0.062, 5);
+        ft.financialForecast(62000.00, 0.038, 15);
+        
     }
-
 }
