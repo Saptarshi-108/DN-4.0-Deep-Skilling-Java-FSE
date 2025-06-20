@@ -1,6 +1,4 @@
-package Week1_DesignPrinciplesandPattern.Exercise1_ImplementingtheSingletonPattern.code;
-
-
+package Week1_DesignPrinciplesandPattern.Exercise_1_ImplementingtheSingletonPattern.Code;
 
 public class Logger {
     private static final Logger instance = new Logger();

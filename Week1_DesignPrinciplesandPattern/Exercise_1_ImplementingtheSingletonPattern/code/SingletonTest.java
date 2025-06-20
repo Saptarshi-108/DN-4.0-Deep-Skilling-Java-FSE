@@ -1,9 +1,7 @@
-package Week1_DesignPrinciplesandPattern.Exercise1_ImplementingtheSingletonPattern.code;
-
-
+package Week1_DesignPrinciplesandPattern.Exercise_1_ImplementingtheSingletonPattern.Code;
 
 public class SingletonTest {
-    public static void main(String[] args) {
+public static void main(String[] args) {
         Logger logger1 = Logger.getInstance();
         logger1.log("First log message.");
 
