@@ -98,11 +98,11 @@ mvn compile exec:java -Dexec.mainClass="org.saptarshi.LoggingExample"
 
 - Use appropriate log levels:
 
--- ERROR: For critical issues that need immediate attention
+- - ERROR: For critical issues that need immediate attention
 
--- WARN: For potentially harmful situations
+- - WARN: For potentially harmful situations
 
--- INFO: For important runtime events
+- - INFO: For important runtime events
 
 - Use meaningful log messages
 - Configure log levels appropriately in production
