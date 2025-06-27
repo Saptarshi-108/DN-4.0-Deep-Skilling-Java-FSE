@@ -13,17 +13,19 @@ This document covers the implementation of SLF4J (Simple Logging Facade for Java
 
 ## Project Structure
 
+```
 src/main/java/org/saptarshi/
-├── LoggingExample.java # Main logging implementation
-└── Main.java # Entry point
-
+├── LoggingExample.java    # Main logging implementation
+└── Main.java              # Entry point
+```
 
 ---
 
 ## Code Implementation
 
-### LoggingExample.java
+### `LoggingExample.java`
 
+```java
 package org.saptarshi;
 
 import org.slf4j.Logger;
@@ -31,6 +33,7 @@ import org.slf4j.LoggerFactory;
 
 public class LoggingExample {
     private static final Logger logger = LoggerFactory.getLogger(LoggingExample.class);
+
     public static void main(String[] args) {
         // Log messages at different levels
         logger.error("This is an error message");
@@ -38,23 +41,30 @@ public class LoggingExample {
         logger.info("This is an info message");
     }
 }
+```
 
-### pom.xml
+---
 
+### `pom.xml`
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>org.saptarshi</groupId>
     <artifactId>Code</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <!-- SLF4J API -->
         <dependency>
@@ -62,6 +72,7 @@ public class LoggingExample {
             <artifactId>slf4j-api</artifactId>
             <version>1.7.30</version>
         </dependency>
+
         <!-- Logback (SLF4J Implementation) -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -70,40 +81,51 @@ public class LoggingExample {
         </dependency>
     </dependencies>
 </project>
+```
+
+---
 
 ## Output
 
-The program produces the following output:
+The program produces the following log output:
 
+```
 ERROR - This is an error message  
 WARN  - This is a warning message  
 INFO  - This is an info message  
+```
+
+---
 
 ## Key Features Demonstrated
 
-- Logging Levels: Shows usage of different log levels (ERROR, WARN, INFO)
-- SLF4J Integration: Demonstrates how to integrate SLF4J with a logging implementation (Logback)
-- Dependency Management: Uses Maven for managing dependencies
+- **Logging Levels**: Shows usage of different log levels (ERROR, WARN, INFO)  
+- **SLF4J Integration**: Demonstrates how to integrate SLF4J with a logging implementation (Logback)  
+- **Dependency Management**: Uses Maven for managing dependencies  
 
-## Running the example 
+---
 
-- Ensure Maven is installed
+## Running the Example
 
-- Navigate to the project directory
+1. Ensure Maven is installed  
+2. Navigate to the project directory  
+3. Run the application with:
 
-- Run the application with the command:
+
 mvn compile exec:java -Dexec.mainClass="org.saptarshi.LoggingExample"
 
-## Best Practice 
 
-- Use appropriate log levels:
+---
 
-- - ERROR: For critical issues that need immediate attention
+## Best Practices
 
-- - WARN: For potentially harmful situations
+- **Use appropriate log levels:**
+  - `ERROR`: For critical issues that need immediate attention  
+  - `WARN`: For potentially harmful situations  
+  - `INFO`: For important runtime events
 
-- - INFO: For important runtime events
+- Use meaningful log messages  
+- Configure log levels appropriately in production  
+- Consider using MDC (Mapped Diagnostic Context) for adding user/session/request-specific info to logs  
 
-- Use meaningful log messages
-- Configure log levels appropriately in production
-- Consider using MDC (Mapped Diagnostic Context) for additional context in logs (e.g., user ID, request ID) 
+---
